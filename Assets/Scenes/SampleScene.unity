@@ -12871,6 +12871,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4416266459547408565, guid: e8a858a26b12072449ce1b2df9e08b92, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a4c5d5d66fd032478d83d7db1723321, type: 2}
     - target: {fileID: 919132149155446097, guid: e8a858a26b12072449ce1b2df9e08b92, type: 3}
       propertyPath: m_Name
       value: theeleanor
@@ -12879,10 +12883,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 9dc14d7761ca3d04db01efe18cb07c33, type: 2}
+    - target: {fileID: 3135273729055742909, guid: e8a858a26b12072449ce1b2df9e08b92, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a4c5d5d66fd032478d83d7db1723321, type: 2}
     - target: {fileID: 7070833395709082847, guid: e8a858a26b12072449ce1b2df9e08b92, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7a32e1dc88510204e877db94365545df, type: 2}
+    - target: {fileID: 7070833395709082847, guid: e8a858a26b12072449ce1b2df9e08b92, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59642aae054697d4ab55d0ecff1f4f9b, type: 2}
     - target: {fileID: 9080277714052447057, guid: e8a858a26b12072449ce1b2df9e08b92, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
