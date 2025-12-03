@@ -2,24 +2,25 @@ using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    Vector3 respawnPoint;
+
+    void Awake()
     {
-        
+        respawnPoint = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "canPickUp")
+        if (collision.gameObject.CompareTag("canPickUp"))
         {
             Destroy(collision.gameObject);
+            Debug.Log("Destroy");
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.position = respawnPoint;
+            Debug.Log("Player respawn");
         }
     }
 }

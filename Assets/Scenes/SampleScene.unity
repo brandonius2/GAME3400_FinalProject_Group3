@@ -39087,7 +39087,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.04, z: 9.47}
+  m_Size: {x: 0.26, y: 2.04, z: 9.47}
   m_Center: {x: -6.89, y: 0.92, z: -11.6}
 --- !u!65 &932906525
 BoxCollider:
@@ -39108,8 +39108,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.9, z: 3.72}
-  m_Center: {x: -7.07, y: 1.44, z: 2.2}
+  m_Size: {x: 0.46, y: 0.9, z: 3.72}
+  m_Center: {x: -6.77, y: 1.44, z: 2.2}
 --- !u!65 &932906526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39129,8 +39129,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.6, z: 19.8}
-  m_Center: {x: 7.39, y: 0.57, z: -2.53}
+  m_Size: {x: 0.29, y: 2.6, z: 19.8}
+  m_Center: {x: 6.91, y: 0.57, z: -2.53}
 --- !u!4 &932906527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e8a858a26b12072449ce1b2df9e08b92, type: 3}
@@ -52486,7 +52486,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 194589974}
+  m_Mesh: {fileID: 645272499}
 --- !u!33 &1236430827
 MeshFilter:
   m_ObjectHideFlags: 10
