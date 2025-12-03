@@ -153,7 +153,9 @@ public class PickUp : MonoBehaviour
     {
         pm.speed = 0f;
         am.playAudio();
+        am.PlayBreathing();
         yield return new WaitForSeconds(catchBreathTime);
         pm.speed = pm.ogspeed;
+        am.StopBreathing();
     }
 }

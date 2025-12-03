@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource[] clips;
     public int clipIndex;
+
+    public AudioSource breathingSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,5 +31,17 @@ public class AudioManager : MonoBehaviour
     {
         clips[clipIndex].Play();
         clipIndex++;
+    }
+
+    public void PlayBreathing()
+    {
+        if (breathingSource)
+            breathingSource.Play();
+    }
+
+    public void StopBreathing()
+    {
+        if (breathingSource)
+            breathingSource.Stop();
     }
 }
