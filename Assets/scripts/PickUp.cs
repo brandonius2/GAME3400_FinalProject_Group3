@@ -16,6 +16,7 @@ public class PickUp : MonoBehaviour
     private bool canDrop = true; //this is needed so we don't throw/drop object when rotating the object
     private int LayerNumber; //layer index
     public float catchBreathTime;
+    public AudioManager am;
 
     //Reference to script which includes mouse movement of player (looking around)
     //we want to disable the player looking around when rotating the object
@@ -151,6 +152,7 @@ public class PickUp : MonoBehaviour
     private IEnumerator catchBreath()
     {
         pm.speed = 0f;
+        am.playAudio();
         yield return new WaitForSeconds(catchBreathTime);
         pm.speed = pm.ogspeed;
     }
