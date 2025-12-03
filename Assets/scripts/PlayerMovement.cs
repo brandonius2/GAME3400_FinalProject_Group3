@@ -11,16 +11,13 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f * 2;
     public float jumpHeight = 3f;
 
-
-
-
-
-
-
     Vector3 velocity;
 
+    public AudioSource audioSource;
+    public AudioClip footstepClip;
+    public float footstepInterval = 0.4f;
 
-
+    float stepTimer = 0f;
 
     void Start()
     {
@@ -52,13 +49,23 @@ public class PlayerMovement : MonoBehaviour
 
 
         //check if the player is on the ground so he can jump
-    //    if (Input.GetButtonDown("Jump") && controller.isGrounded)
-      //  {
+        //    if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        //  {
         //    //the equation for jumping
-          //  velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            //Debug.Log("Jump");
+        //  velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        //Debug.Log("Jump");
         //}
 
 
+        if (move.magnitude > 0.1f)
+        {
+            stepTimer += Time.deltaTime;
+
+            if (stepTimer >= footstepInterval)
+            {
+                audioSource.PlayOneShot(footstepClip);
+                stepTimer = 0f;
+            }
+        }
     }
 }
