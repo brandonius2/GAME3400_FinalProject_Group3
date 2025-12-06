@@ -152,10 +152,12 @@ public class PickUp : MonoBehaviour
     private IEnumerator catchBreath()
     {
         pm.speed = 0f;
-        am.playAudio();
         am.PlayBreathing();
         yield return new WaitForSeconds(catchBreathTime);
-        pm.speed = pm.ogspeed;
-        am.StopBreathing();
+        if(!ProgressTrigger.isProgressing)
+        {
+            pm.speed = pm.ogspeed;
+            am.StopBreathing();
+        }
     }
 }

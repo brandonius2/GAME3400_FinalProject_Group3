@@ -30,18 +30,27 @@ public class AudioManager : MonoBehaviour
     public void playAudio()
     {
         clips[clipIndex].Play();
+    }
+
+    public void NextAudioReady()
+    {
         clipIndex++;
     }
 
     public void PlayBreathing()
     {
-        if (breathingSource)
+        if (breathingSource && !breathingSource.isPlaying)
             breathingSource.Play();
     }
 
     public void StopBreathing()
     {
-        if (breathingSource)
+        if (breathingSource && breathingSource.isPlaying)
             breathingSource.Stop();
+    }
+
+    public float AudioLength()
+    {
+        return clips[clipIndex].clip.length;
     }
 }
