@@ -17,12 +17,15 @@ public class PickUp : MonoBehaviour
     private int LayerNumber; //layer index
     public float catchBreathTime;
     public AudioManager am;
+    public GameObject currentCrate;
+    public PickUpCrate pickUpCrate;
 
     //Reference to script which includes mouse movement of player (looking around)
     //we want to disable the player looking around when rotating the object
     //example below 
     MouseMovement mouseLookScript;
     PlayerMovement pm;
+
     void Start()
     {
         LayerNumber = LayerMask.NameToLayer("holdLayer"); //if your holdLayer is named differently make sure to change this ""
@@ -32,23 +35,12 @@ public class PickUp : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !ProgressTrigger.isProgressing) //change E to whichever key you want to press to pick up
+        if (Input.GetKeyDown(KeyCode.E) && !ProgressTrigger.isProgressing && currentCrate != null) //change E to whichever key you want to press to pick up
         {
+
             if (heldObj == null) //if currently not holding anything
             {
-                //perform raycast to check if player is looking at object within pickuprange
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
-                {
-                    //make sure pickup tag is attached
-                    Debug.Log("object was hit");
-                    if (hit.transform.gameObject.tag == "canPickUp")
-                    {
-                        Debug.Log("object can be picked up");
-                        //pass in object hit into the PickUpObject function
-                        PickUpObject(hit.transform.gameObject);
-                    }
-                }
+                PickUpObject(currentCrate);
             }
             else
             {
@@ -71,7 +63,7 @@ public class PickUp : MonoBehaviour
 
         }
     }
-    void PickUpObject(GameObject pickUpObj)
+    public void PickUpObject(GameObject pickUpObj)
     {
         if (pickUpObj.GetComponent<Rigidbody>()) //make sure the object has a RigidBody
         {
@@ -131,6 +123,8 @@ public class PickUp : MonoBehaviour
         heldObj.transform.parent = null;
         heldObjRb.AddForce(transform.forward * throwForce);
         heldObj = null;
+        currentCrate = null;
+        pickUpCrate = null;
         StartCoroutine(catchBreath());
     }
     void StopClipping() //function only called when dropping/throwing
@@ -151,7 +145,7 @@ public class PickUp : MonoBehaviour
 
     private IEnumerator catchBreath()
     {
-        pm.speed = 0.1f;
+        pm.speed = 0.5f;
         am.PlayBreathing();
         yield return new WaitForSeconds(catchBreathTime);
         if(!ProgressTrigger.isProgressing)

@@ -5,12 +5,12 @@ public class Climb : MonoBehaviour
 {
     public TMP_Text interactText;
     public Transform teleportPoint;
-    bool inRange = false;
+    public bool InRange { get; private set; } = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (inRange && Input.GetKeyDown(KeyCode.E))
+        if (InRange && Input.GetKeyDown(KeyCode.E))
         {
             var player = GameObject.FindGameObjectWithTag("Player");
             var controller = player.GetComponent<CharacterController>();
@@ -23,7 +23,7 @@ public class Climb : MonoBehaviour
                 controller.enabled = true;
 
             interactText.enabled = false;
-            inRange = false;
+            InRange = false;
         }
     }
 
@@ -32,7 +32,7 @@ public class Climb : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             interactText.enabled = true;
-            inRange = true;
+            InRange = true;
         }
     }
 
@@ -41,7 +41,7 @@ public class Climb : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactText.enabled = false;
-            inRange = false;
+            InRange = false;
         }
     }
 }
