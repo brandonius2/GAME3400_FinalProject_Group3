@@ -11756,6 +11756,10 @@ PrefabInstance:
       propertyPath: interactText
       value: 
       objectReference: {fileID: 1672178674}
+    - target: {fileID: 8670276605281706377, guid: 6d00505f160df5e4791764c95b6a2d4f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
