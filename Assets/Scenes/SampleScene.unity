@@ -17234,7 +17234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &281040745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17269,7 +17269,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.6862745, g: 0.7764706, b: 1, a: 1}
-  m_Intensity: 0.04
+  m_Intensity: 59.42
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -114236,6 +114236,7 @@ MonoBehaviour:
   am: {fileID: 3177559981496396607}
   currentCrate: {fileID: 0}
   pickUpCrate: {fileID: 0}
+  camera: {fileID: 4948535337984314503}
 --- !u!82 &4948535337984314508
 AudioSource:
   m_ObjectHideFlags: 0

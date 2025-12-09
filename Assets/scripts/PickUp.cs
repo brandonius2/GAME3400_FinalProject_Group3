@@ -19,6 +19,7 @@ public class PickUp : MonoBehaviour
     public AudioManager am;
     public GameObject currentCrate;
     public PickUpCrate pickUpCrate;
+    public GameObject camera;
 
     //Reference to script which includes mouse movement of player (looking around)
     //we want to disable the player looking around when rotating the object
@@ -70,7 +71,7 @@ public class PickUp : MonoBehaviour
             heldObj = pickUpObj; //assign heldObj to the object that was hit by the raycast (no longer == null)
             heldObjRb = pickUpObj.GetComponent<Rigidbody>(); //assign Rigidbody
             heldObjRb.isKinematic = true;
-            heldObjRb.transform.parent = holdPos.transform; //parent object to holdposition
+            heldObjRb.transform.parent = camera.transform; //parent object to holdposition
             heldObj.layer = LayerNumber; //change the object layer to the holdLayer
             //make sure object doesnt collide with player, it can cause weird bugs
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
